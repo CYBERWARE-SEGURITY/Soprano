@@ -5,14 +5,13 @@ namespace Bytebeats
 {
     static HWAVEOUT hWaveOut;
 
-    VOID Abort(HANDLE hThread, HANDLE hHeap)
+    VOID Abort(HANDLE hThreadBytebeat)
     {
         waveOutClose(hWaveOut);
         waveOutBreakLoop(hWaveOut);
         waveOutReset(hWaveOut);
-        TerminateThread(hThread, 0);
-        HeapDestroy(hHeap);
-        CloseHandle(hThread);
+        TerminateThread(hThreadBytebeat, 0);
+        CloseHandle(hThreadBytebeat);
     }
 
     DWORD WINAPI Beat1(LPVOID lpvd)
