@@ -72,7 +72,7 @@ INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	ThreadAbort(Payload5, &hp);
 	Bytebeat::Abort(Bytebeat5);
-    System::cls();
+    	System::cls();
 
 	HANDLE Payload6 = ThreadExecute(&PayloadsGdi::Load6, &hp);
 	HANDLE tLoadIcon = ThreadExecute(&PayloadsGdi::LoadIconEffect, &hp);
